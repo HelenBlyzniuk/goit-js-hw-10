@@ -1,18 +1,25 @@
 import './css/styles.css';
+import fetchCountryName  from './fetchCountries.js';
+import debounce from 'lodash.debounce';
 
+refs = {
+    inputEl: document.querySelector('#search-box'),
+}
+let debounce = require('lodash.debounce');
 const DEBOUNCE_DELAY = 300;
+refs.inputEl.addEventListener('input', debounce(onCountryInput, DEBOUNCE_DELAY));
 
-
-function fetchCountryName(countryName) {
-    const URL = `https://restcountries.com/v3.name/${countryName}?fields=name.official,capital,population,flag.svg,languages`;   
-   }
-        fetch(URL).then(response => {
-            if (!response.ok) {
-            throw new Error(response.status);
+function onCountryInput(e) {
+    let countryName = e.target.value;
+    if (countryName === '') {
+        return
     }
-            return response.json()
-        })
-        .then(data => { console.log(data) })
-        .catch (error =>{ console.log(error)})
+    fetchCountryName(countryName)
+    .then(data => { console.log(data) })
+    .catch (error =>{ console.log(error)})
+    
+}
+
+      
 
   
