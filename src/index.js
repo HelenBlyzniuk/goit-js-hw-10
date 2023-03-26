@@ -43,10 +43,11 @@ function onCountryInput(e) {
                 refs.divEl.innerHTML = markupForCountry(data); 
             } 
         })
-        .catch( error => {
-            
+        .catch(error => {
+            console.log(error);
+         
         Notiflix.Notify.warning('Oops, there is no country with that name');})
-    
+         
 }
 
 

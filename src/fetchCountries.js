@@ -1,4 +1,4 @@
-export default function fetchCountryName(countryName) {
+function fetchCountryName(countryName) {
     const URL = `https://restcountries.com/v3.1/name/${countryName}?fields=name,capital,population,flags,languages`;   
    
        return fetch(URL).then(response => {
@@ -9,3 +9,4 @@ export default function fetchCountryName(countryName) {
         })
 };
         
+export default (fetchCountryName);
