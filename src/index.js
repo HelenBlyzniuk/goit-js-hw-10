@@ -6,7 +6,7 @@ import fetchCountryName  from './fetchCountries.js';
 
  
 
-refs = {
+const refs = {
     inputEl: document.querySelector('#search-box'),
     listEl: document.querySelector('.country-list'),
     divEl: document.querySelector('.country-info'),
@@ -44,8 +44,7 @@ function onCountryInput(e) {
             } 
         })
         .catch(error => {
-            console.log(error);
-         
+        console.log(error);
         Notiflix.Notify.warning('Oops, there is no country with that name');})
          
 }
