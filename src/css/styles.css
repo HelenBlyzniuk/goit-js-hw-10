@@ -25,8 +25,20 @@ body {
 
 .country-info{
   font-size: 25px;
+  margin-left: 30px;
 }
 span{
   font-weight: bold;
   color:blue;
+}
+
+.country-list{
+  margin-left:30px;
+  font-size: 30px;
+}
+
+.wrapper{
+  display:flex;
+  align-items: baseline;
+  
 }
